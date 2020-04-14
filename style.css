@@ -1,7 +1,36 @@
 :root {
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    --bg-color: #909090;
+    --text-color-1: #101010;
+    --text-color-2: #d0d0d0;
 }
 
-.h1 {
+body {
+    background-color: var(--bg-color);
+}
+
+main {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+    color: var(--text-color-1);
+}
+
+h1 {
     font-weight: 900;
+    color: var(--text-color-1);
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 36px;
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 2rem;
+    color: var(--text-color-2);
+    font-weight: 100;
+    font-style: italic;
+    font-size: 22px;
 }
