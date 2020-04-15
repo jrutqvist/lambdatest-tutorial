@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Step 1, Lambdatest Tutorial </title>
+</head>
+<body>
+    <main>
+        <h1>Step 1: Setup Webpage</h1>
+
+        <h2>Setup Github pages</h2>
+        <p>
+            The first thing we are going to do is to steup an actual webpage so that we have something to test later in our Lambdatest environment.
+            To set up this simple website, we are going to use <a href="https://pages.github.com/">Github pages</a> but you can ofcourse use other hosting platforms aswell,
+            the important thing is that you can reach your website via an url in a browser.
+        </p>
+        <p> 
+            To get started with Github pages, first, you need to create a repository that we will use to publish to your website. Go to your Github profile and create a new repository. You will need to name the repository username.github.io and make sure username exactly matches your username, else it won’t work. <!-- INSERT PICTURE --> 
+            When this is done, head over to your terminal and clone your repository. 
+        </p>
+
+        <p>
+            This repo will now automatically publish an index.html-file when you push to the master branch, to the URL https://username.github.io. To see this in action, let’s create a simple index.html file with some basic HTML structure to it and push it. 
+        </p>
+        <p>
+            To create the file, simply navigate in your terminal to the root of your Github repository and type:  <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Copy this snippet of code into your index-file: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Then use git command to add, commit, and push your code to your master branch: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            If you now go to your URL and refresh the page, it should look like this: <!-- INSERT PICTURE --> 
+        </p>
+        </br>
+        </br>
+        <h2>Add some basic funtionallity</h2>
+
+        <p>
+            Now that we have our website published, we can go ahead and create something that we, later on, can test using Lambdatest. To keep this tutorial as simple and to the point as possible, we will not incorporate any CSS or Javascript code to our website, but you can of course test a website with CSS and Javascript in a similar fashion as we will demonstrate when we get to the testing part of the tutorial.
+        </p>
+        <p>
+            For this tutorial, we will demonstrate how you can test that a button works as it should. To test this, we need to add a button to our index page and have it do something, like redirecting to another page. 
+        </p>
+        <p>
+            Firstly, let’s add a button that will redirect us to another file called secondpage.html: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Of course, right now we don’t have that file so let’s create it, the same way we created our index-file, and add some content to this file as well: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Now that all this is done, we just need to add the new file to Git and then commit and push the new changes: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Our website should now be updated with the new button that redirects us to our second HTML page. Try it out on your own page! 
+        </p>
+        <p>
+            But now that we have pressed our button, we can’t navigate back to our first page without changing our URL, so let’s just add another button that takes us back to our first page: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            There we go! Now we have a website set up with some basic functionality that we can test! Nice work! In the next step, we will go through how to set up your Lambdatest account and walk through some of the functions that come with the Lambdatest application.
+        </p>
+    </main>
+</body>
+</html>
