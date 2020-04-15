@@ -5,6 +5,9 @@
     --bg-color: #909090;
     --text-color-1: #101010;
     --text-color-2: #d0d0d0;
+    --text-2-hover: #3a3a3a;
+    --button-color: rgb(74, 143, 83);
+    --button-hover: rgb(49, 134, 60);
 }
 
 body {
@@ -12,9 +15,10 @@ body {
 }
 
 main {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 2rem;
+    max-width: 50rem;
     color: var(--text-color-1);
 }
 
@@ -33,4 +37,50 @@ h2 {
     font-weight: 100;
     font-style: italic;
     font-size: 22px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.button-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    float: right;
+}
+
+button {
+    color: var(--text-color-2);
+    background-color: var(--button-color);
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+        color 250ms ease-in-out,
+        transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: var(--button-hover);
+    color: var(--text-2-hover);
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
 }
