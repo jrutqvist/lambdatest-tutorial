@@ -18,28 +18,26 @@
             The test we are going to create is going to use the Lambdatest Automation tool, and with this tool, we are going to test that the button we implemented on our website is behaving as we want it to, that is redirecting us to the desired page. To do this we are going to use node.js.
         </p>
         <p>
-            Firstly we need to set up your GitHub repository with the correct dependencies. Make sure that you have the latest version of npm with this command: <!-- INSERT PICTURE --> 
+            Firstly we need to set up your GitHub repository with the correct dependencies. Make sure that you have the latest version of npm with this command: <!-- INSERT TERMINAL CODE: `npm install npm@latest -g` --> 
         </p>
         <p>
-            And then run this command to install Selenium dependencies for node.js: <!-- INSERT PICTURE --> 
+            And then run this command to install Selenium dependencies for node.js: <!-- INSERT TERMINAL CODE `npm i selenium-webdriver` --> 
         </p>
         <p>
-            Now you can create an index.js file that will be used to write your tests in: <!-- INSERT PICTURE --> 
+            Now you can create an index.js file that will be used to write your tests in.
+            What we first need to add to this file is some configuration. Your Lambdatest username and your unique accessKey. These can be found on your dashboard. Navigate to Automation and click the key symbol in the upper right corner and copy-paste your username and accessKey to your index.js file: <!-- INSERT CODE: index.js file, rows 1-4 --> 
         </p>
         <p>
-            What we first need to add to this file is some configuration. Your Lambdatest username and your unique accessKey. These can be found on your dashboard. Navigate to Automation and klick the key symbol in the upper right corner and copy-paste your user name and accessKey: <!-- INSERT PICTURE --> 
+            We also need to create constants such as webdriver, grid_host, and grid_url. These are used to run the tests and connecting them to your Lambdatest dashboard so that you can get the test logs and results: <!-- INSERT CODE: index.js file, rows 4-8 --> 
         </p>
         <p>
-            We also need to create constants such as webdriver, grid_host, and grid_url. These are used to run the tests and connecting them to your Lambdatest dashboard so that you can get the test logs and results: <!-- INSERT PICTURE --> 
+            Now that these configurations are in your file, we can start writing our test function. First of all your function needs input capabilities that will decide for example what platform and browser your test will run on. These capabilities also have a parameter for the test name and build name: <!-- INSERT CODE: index.js file, rows 8-23.  --> 
         </p>
         <p>
-            Now that these configurations are in your file, we can start writing our test function. First of all your function needs input capabilities that will decide for example what platform and browser your test will run on. These capabilities also have a parameter for the test name and build name: <!-- INSERT PICTURE --> 
+            When this is done we can start setting up the actual driver that will perform the test: <!-- INSERT CODE: index.js file, rows 23-28 --> 
         </p>
         <p>
-            When this is done we can start setting up the actual driver that will perform the test: <!-- INSERT PICTURE --> 
-        </p>
-        <p>
-            We then use this driver to write our actual test: <!-- INSERT PICTURE --> 
+            We then use this driver to write our actual test: <!-- INSERT CODE: index.js file, rows 28-47 --> 
         </p>
         <p>
             You can read this test in these steps: 
@@ -51,14 +49,14 @@
             </ul>
         </p>
         <p>
-            When all this is done, your index.js file should look something like this: <!-- INSERT PICTURE --> 
+            When all this is done, your index.js file should look something like this: <!-- INSERT CODE. Entire index.js file --> 
         </p>
         <p>
             Now to run this file, simply execute this command: 
-            <!-- INSERT PICTURE --> 
+            <!-- INSERT TERMINAL CODE `node index.js` --> 
         </p>
         <p>
-            You can now enter your Lambdatest dashboard and it should present the results of your test like this: <!-- INSERT PICTURE --> 
+            You can now enter your Lambdatest dashboard automation page, and it should present the results of your test like this: <!-- INSERT PICTURE of automation timeline showing that the test succeded. --> 
         </p>
         <div class="button-container">
             <a href="summary.html">
