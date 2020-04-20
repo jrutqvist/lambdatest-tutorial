@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>Step 3</title>
+</head>
+<body>
+    <main>
+        <h1>Automated testing in Lambdatest</h1>
+        <h2>Adding and running a simple test</h2>
+
+        <p>
+            Now that you got your Lambdatest account and got a good overview of your dashboard UI, we will start working on creating a simple test for the webpage that we made in step 1. The test we are going to create is going to use the Lambdatest Automation tool, and with this tool, we are going to test that the button we implemented on our website is behaving as we want it to, that is redirecting us to the desired page. To do this we are going to use node.js.
+        </p>
+        <p>
+            Firstly we need to set up your GitHub repository with the correct dependencies. Make sure that you have the latest version of npm with this command: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            And then run this command to install Selenium dependencies for node.js: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Now you can create an index.js file that will be used to write your tests in: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            What we first need to add to this file is some configuration. Your Lambdatest username and your unique accessKey. These can be found on your dashboard. Navigate to Automation and klick the key symbol in the upper right corner and copy-paste your user name and accessKey: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            We also need to create constants such as webdriver, grid_host, and grid_url. These are used to run the tests and connecting them to your Lambdatest dashboard so that you can get the test logs and results: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Now that these configurations are in your file, we can start writing our test function. First of all your function needs input capabilities that will decide for example what platform and browser your test will run on. These capabilities also have a parameter for the test name and build name: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            When this is done we can start setting up the actual driver that will perform the test: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            We then use this driver to write our actual test: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            You can read this test in these steps: 
+            <ul>
+                <li>Navigate to your url</li>
+                <li>Find your button that you want to test and execute a click action</li>
+                <li>Now find the title of the page</li>
+                <li>Check that the title is what you expect it to be</li>
+            </ul>
+        </p>
+        <p>
+            When all this is done, your index.js file should look something like this: <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            Now to run this file, simply execute this command: 
+            <!-- INSERT PICTURE --> 
+        </p>
+        <p>
+            You can now enter your Lambdatest dashboard and it should present the results of your test like this: <!-- INSERT PICTURE --> 
+        </p>
+
+    </main>
+
+    
+</body>
+</html>
