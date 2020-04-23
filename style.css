@@ -19,6 +19,7 @@ main {
     margin-right: 10%;
     margin-top: 2rem;
     max-width: 50rem;
+    min-width: 0.8vw;
     color: var(--text-color-1);
 }
 
@@ -39,11 +40,21 @@ h2 {
     font-size: 22px;
 }
 
+
 a {
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
 }
+
+figure {
+    margin: 0;
+    padding-left: 3rem;
+    width: 100%;
+    color: rgb(255, 247, 142);
+    background-color: #403f39;
+}
+
 
 .button-container {
     margin-top: 2rem;
@@ -51,7 +62,7 @@ a {
     float: right;
 }
 
-button {
+.next-button {
     color: var(--text-color-2);
     background-color: var(--button-color);
     display: inline-block;
@@ -70,18 +81,18 @@ button {
     -moz-appearance: none;
 }
 
-button:hover,
-button:focus {
+.next-button:hover,
+.next-button:focus {
     background: var(--button-hover);
     color: var(--text-2-hover);
 }
 
-button:focus {
+.next-button:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
 
-button:active {
+.next-button:active {
     transform: scale(0.99);
 }
 

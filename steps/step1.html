@@ -18,29 +18,53 @@
             the important thing is that you can reach your website via an url in a browser.
         </p>
         <p> 
-            To get started with Github pages, first, you need to create a repository that we will use to publish to your website. Go to your Github profile and create a new repository. You will need to name the repository username.github.io and make sure username exactly matches your username, else it won’t work.
-            When this is done, head over to your terminal and clone your repository. 
+            To get started with Github pages, first, you need to create a repository that we will use to publish to your website. Go to your Github profile and create a new empty repository. When your repository has been made, go into the settings tab on the repository dashboard and scroll down to the headline Github Pages. In the dropdown menu titled "source", select master.
         </p>
 
+
         <p>
-            This repo will now automatically publish an index.html-file when you push to the master branch, to the URL https://username.github.io. To see this in action, let’s create a simple index.html file with some basic HTML structure to it and push it. 
+            This repo will now automatically publish any file named index.html (in the root directory of the repository and on the master branch) as a webpage to the URL https://username.github.io/&lt;repository-name>. To see this in action, let’s create a simple index.html file with some basic HTML structure to it and push it. To do this, you first need to clone the repository so you have it locally. Use the "copy or download" button on the repository dashboard to copy the address used for cloning and run the command 
+            <figure>
+                <pre><code>
+$ git clone git@github.com:username/repo
+                </code></pre>
+            </figure>
         </p>
         <p>
-            To create the file, simply navigate in your terminal to the root of your Github repository and type:  <!-- INSERT TERMINAL CODE: `touch intex.html` --> 
+            To create the file, simply navigate in your terminal to the root of your Github repository and use the touch command:  <!-- INSERT TERMINAL CODE: `touch intex.html` --> 
         </p>
+        <figure>
+            <pre><code>
+$ cd repository-name                
+$ touch index.html
+            </code></pre>
+        </figure>
         <p>
-            Copy this snippet of code into your index-file: <!-- INSERT CODE: Basic HTML code with hello world text --> 
+            Open the index.html file in your favorite text editor and copy this snippet of code into it: <!-- INSERT CODE: Basic HTML code with hello world text --> 
         </p>
+        <figure>
+            <pre><code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Hello World!&lt;/h1>
+&lt;/body>
+&lt;/html>
+            </code></pre>
+        </figure>
         <p>
             Then use git to add, commit, and push your code to your master branch.
             If you now go to your URL and refresh the page, it should look like this:
-            <div class="image">
-                <img src="../images/step1/hello-world.png" >
-            </div>
         </p>
+        <img src="../images/step1/hello-world.png" style="width: 100%;">
         </br>
         </br>
-        <h2>Add some basic funtionallity</h2>
+        <h2>Add some basic functionality</h2>
 
         <p>
             Now that we have our website published, we can go ahead and create something that we, later on, can test using Lambdatest. To keep this tutorial as simple and to the point as possible, we will not incorporate any CSS or Javascript code to our website, but you can of course test a website with CSS and Javascript in a similar fashion as we will demonstrate when we get to the testing part of the tutorial.
@@ -49,11 +73,36 @@
             For this tutorial, we will demonstrate how you can test that a button works as it should. To test this, we need to add a button to our index page and have it do something, like redirecting to another page. 
         </p>
         <p>
-            Firstly, let’s add a button that will redirect us to another file called secondpage.html: <!-- INSERT CODE: simple html file now has a button that links to another page. Button must have an <a> tag with link text saying "click me!" --> 
+            Firstly, let’s add a button that will redirect us to another file called secondpage.html. Insert the following code into the index.html file, just below the line with the h1 element. <!-- INSERT CODE: simple html file now has a button that links to another page. Button must have an <a> tag with link text saying "click me!" --> 
+            
+            <figure>
+                <pre><code>
+&lt;a href="secondpage.html">
+    &lt;button>
+        Click me!
+    &lt;/button>
+&lt;/a>
+                </code></pre>
+            </figure>
         </p>
         <p>
             Of course, right now we don’t have that file so let’s create it, the same way we created our index-file, and add some content to this file as well: <!-- INSERT CODE: Simple html file that must have the title "Second Page" --> 
         </p>
+        <figure>
+            <pre><code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Second Page&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Hello Second World!&lt;/h1>
+&lt;/body>
+&lt;/html>
+            </code></pre>
+        </figure>
         <p>
             Now that all this is done, we just need to add the new file to Git and then commit and push the new changes!
             Our website should now be updated with the new button that redirects us to our second HTML page. Try it out on your own page! 
@@ -66,8 +115,8 @@
             In the next step, we will go through how to set up your Lambdatest account and walk through some of the functions that come with the Lambdatest application.
         </p>
          <div class="button-container">
-             <a href="step2.html">
-                 <button>Continue</button>
+             <a href="step2.html" class="next-button">
+                 Continue
              </a>
          </div>
     </main>
