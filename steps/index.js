@@ -30,7 +30,7 @@ function testButtonFunction() {
     driver.get("{yourURL}").then(function() {
         driver.findElement(webdriver.By.linkText("click me!")).click().then(function() {
             driver.getTitle().then(function(title) {
-                setTimeout(function() {if(title == 'Second Page') {
+                setTimeout(function() {if(title === 'Second Page') {
                         console.log('Passed');
                         driver.executeScript('lambda-status=passed');
                         driver.quit();
