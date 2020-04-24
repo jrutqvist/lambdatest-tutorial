@@ -55,6 +55,10 @@ figure {
     background-color: #403f39;
 }
 
+code  {
+    color: rgb(255, 247, 142);
+}
+
 
 .button-container {
     margin-top: 2rem;
