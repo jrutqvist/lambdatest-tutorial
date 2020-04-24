@@ -20,27 +20,98 @@
         <p>
             Firstly we need to set up your GitHub repository with the correct dependencies. Make sure that you have the latest version of npm with this command: <!-- INSERT TERMINAL CODE: `npm install npm@latest -g` --> 
         </p>
+        <figure>
+            <pre><code>
+$ npm install npm@latest -g
+            </code></pre>
+        </figure>
         <p>
             And then run this command to install Selenium dependencies for node.js: <!-- INSERT TERMINAL CODE `npm i selenium-webdriver` --> 
         </p>
+        <figure>
+            <pre><code>
+$ npm i selenium-webdriver           
+            </code></pre>
+        </figure>
         <p>
             Now you can create an index.js file that will be used to write your tests in.
             What we first need to add to this file is some configuration. Your Lambdatest username and your unique accessKey. These can be found on your dashboard. Navigate to Automation and click the key symbol in the upper right corner and copy-paste your username and accessKey to your index.js file: <!-- INSERT CODE: index.js file, rows 1-4 --> 
         </p>
+        <figure>
+            <pre><code>
+const USERNAME = '{yourUserName}';
+const KEY = '{yourAccesKey}';
+            </code></pre>
+        </figure>
         <p>
             We also need to create constants such as webdriver, grid_host, and grid_url. These are used to run the tests and connecting them to your Lambdatest dashboard so that you can get the test logs and results: <!-- INSERT CODE: index.js file, rows 4-8 --> 
         </p>
+        <figure>
+            <pre><code>
+const webdriver = require('selenium-webdriver');
+const GRID_HOST = 'hub.lambdatest.com/wd/hub';
+const gridUrl = 'https://' + USERNAME + ':' + KEY + '@' + GRID_HOST;
+            </code></pre>
+        </figure>
         <p>
             Now that these configurations are in your file, we can start writing our test function. First of all your function needs input capabilities that will decide for example what platform and browser your test will run on. These capabilities also have a parameter for the test name and build name: <!-- INSERT CODE: index.js file, rows 8-23.  --> 
         </p>
+        <figure>
+            <pre><code>
+function testButtonFunction() {
+    // Setup Input capabilities
+    const capabilities = {
+        platform: 'windows 10',
+        browserName: 'chrome',
+        version: '76.0',
+        resolution: '1280x800',
+        network: true,
+        visual: true,
+        console: true,
+        video: true,
+        name: 'Test click',
+        build: 'First build'
+    }
+}
+            </code></pre>
+        </figure>
         <p>
             When this is done we can start setting up the actual driver that will perform the test: <!-- INSERT CODE: index.js file, rows 23-28 --> 
         </p>
+        <figure>
+            <pre><code>
+const driver = new webdriver.Builder()
+    .usingServer(gridUrl)
+    .withCapabilities(capabilities)
+    .build();
+            </code></pre>
+        </figure>
         <p>
             We then use this driver to write our actual test: <!-- INSERT CODE: index.js file, rows 28-47 --> 
         </p>
+        <figure>
+            <pre><code>
+// navigate to a url, click the button and get title of next page.
+driver.get("{yourURL}").then(function() {
+    driver.findElement(webdriver.By.linkText("click me!")).click().then(function() {
+        driver.getTitle().then(function(title) {
+            setTimeout(function() {if(title === 'Second Page') {
+                    console.log('Passed');
+                    driver.executeScript('lambda-status=passed');
+                    driver.quit();
+                } else {
+                    console.log('failed');
+                    driver.executeScript('lambda-status=failed');
+                    driver.quit();
+                }
+            }, 5000);
+        });
+    });
+});
+            </code></pre>
+        </figure>
         <p>
-            You can read this test in these steps: 
+            Described in natural language this is what the test does:
             <ul>
                 <li>Navigate to your url</li>
                 <li>Find your button that you want to test and execute a click action</li>
@@ -49,22 +120,23 @@
             </ul>
         </p>
         <p>
-            When all this is done, your index.js file should look something like this: <!-- INSERT CODE. Entire index.js file --> 
+            Click <a href="index.js" target="_blank" rel="noopener noreferrer">here</a> to view the entire index.js file as it should look now!
         </p>
         <p>
             Now to run this file, simply execute this command: 
             <!-- INSERT TERMINAL CODE `node index.js` --> 
         </p>
+        <figure>
+            <pre><code>
+$ node index.js            
+            </code></pre>
+        </figure>
         <p>
             You can now enter your Lambdatest dashboard automation page, and it should present the results of your test like this: 
-            <div class="image">
-                <img src="../images/step3/dashboard.png" >
-            </div>
         </p>
+        <img src="../images/step3/dashboard.png" style="width: 100%;">
         <div class="button-container">
-            <a href="summary.html">
-                <button>Finish!</button>
-            </a>
+            <a href="summary.html" class="next-button">Finish!</a>
         </div>
     </main>
 

@@ -59,6 +59,11 @@ code  {
     color: rgb(255, 247, 142);
 }
 
+main>image {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 
 .button-container {
     margin-top: 2rem;
