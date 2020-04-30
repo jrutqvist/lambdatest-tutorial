@@ -18,27 +18,22 @@
             the important thing is that you can reach your website via an url in a browser.
         </p>
         <p> 
-            To get started with Github pages, first, you need to create a repository that we will use to publish to your website. Go to your Github profile and create a new empty repository. When your repository has been made, go into the settings tab on the repository dashboard and scroll down to the headline Github Pages. In the dropdown menu titled "source", select master.
-        </p>
-
-
-        <p>
-            This repo will now automatically publish any file named index.html (in the root directory of the repository and on the master branch) as a webpage to the URL https://username.github.io/&lt;repository-name>. To see this in action, let’s create a simple index.html file with some basic HTML structure to it and push it. To do this, you first need to clone the repository so you have it locally. Use the "copy or download" button on the repository dashboard to copy the address used for cloning and run the command 
-            <figure>
-                <pre><code>
-$ git clone git@github.com:username/repo
-                </code></pre>
-            </figure>
-        </p>
-        <p>
-            To create the file, simply navigate in your terminal to the root of your Github repository and use the touch command:  <!-- INSERT TERMINAL CODE: `touch intex.html` --> 
+            To get started with Github pages, first, you need to create a repository that we will use to publish to your website. Go to your Github profile and create a new empty repository. Now you need to clone your repo and create an index.html file.
+            Use the "copy or download" button on the repository dashboard to copy the address used for cloning and run the commands 
         </p>
         <figure>
             <pre><code>
+$ git clone git@github.com:username/repo
 $ cd repository-name                
 $ touch index.html
             </code></pre>
         </figure>
+
+        <p>
+            Use the git commands to add, commit and push your new file so that you can see it on Github.
+            When this is done, go into the settings tab on the repository dashboard and scroll down to the headline Github Pages. In the dropdown menu titled "source", select master.
+            This repo will now automatically publish your file named index.html (it has to be in the root directory of the repository and on the master branch) as a webpage to the URL https://username.github.io/&lt;repository-name>. To see this in action, let’s add some content to index.html and push it. 
+        </p>
         <p>
             Open the index.html file in your favorite text editor and copy this snippet of code into it: <!-- INSERT CODE: Basic HTML code with hello world text --> 
         </p>
@@ -59,7 +54,7 @@ $ touch index.html
         </figure>
         <p>
             Then use git to add, commit, and push your code to your master branch.
-            If you now go to your URL and refresh the page, it should look like this:
+            If you now go to your URL and refresh the page, it should look like this (it might take a couple of minutes for pages to update your content):
         </p>
         <img src="../images/step1/hello-world.png" style="width: 100%;">
         </br>
@@ -86,7 +81,7 @@ $ touch index.html
             </figure>
         </p>
         <p>
-            Of course, right now we don’t have that file so let’s create it, the same way we created our index-file, and add some content to this file as well: <!-- INSERT CODE: Simple html file that must have the title "Second Page" --> 
+            Of course, right now we don’t have that file so let’s create it, the same way we created our index-file, name it something like secondpage.html, and add some content to this file as well: <!-- INSERT CODE: Simple html file that must have the title "Second Page" --> 
         </p>
         <figure>
             <pre><code>
@@ -108,8 +103,17 @@ $ touch index.html
             Our website should now be updated with the new button that redirects us to our second HTML page. Try it out on your own page! 
         </p>
         <p>
-            But now that we have pressed our button, we can’t navigate back to our first page without changing our URL, so let’s just add another button that takes us back to our first page: <!-- INSERT CODE: Second html file has a simple button redirecting to index file --> 
+            But now that we have pressed our button, we can’t navigate back to our first page without changing our URL, so let’s just add another button that takes us back to our first page and push all these new changes with git: <!-- INSERT CODE: Second html file has a simple button redirecting to index file --> 
         </p>
+        <figure>
+            <pre><code>
+&lt;a href="index.html">
+&lt;button>
+    Go Back!
+&lt;/button>
+&lt;/a>
+            </code></pre>
+        </figure>
         <p>
             There we go! Now we have a website set up with some basic functionality that we can test! Nice work! </br>
             In the next step, we will go through how to set up your Lambdatest account and walk through some of the functions that come with the Lambdatest application.

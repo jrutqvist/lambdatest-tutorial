@@ -76,7 +76,7 @@ function testButtonFunction() {
             </code></pre>
         </figure>
         <p>
-            When this is done we can start setting up the actual driver that will perform the test: <!-- INSERT CODE: index.js file, rows 23-28 --> 
+            When this is done we can start setting up the actual driver that will perform the test. This is done by writing the following inside your test fucntion: <!-- INSERT CODE: index.js file, rows 23-28 --> 
         </p>
         <figure>
             <pre><code>
@@ -87,13 +87,13 @@ const driver = new webdriver.Builder()
             </code></pre>
         </figure>
         <p>
-            We then use this driver to write our actual test: <!-- INSERT CODE: index.js file, rows 28-47 --> 
+            We then use this driver to write our actual test. Don't forget to change the URL to your github pages URL that we want to test: <!-- INSERT CODE: index.js file, rows 28-47 --> 
         </p>
         <figure>
             <pre><code>
 // navigate to a url, click the button and get title of next page.
 driver.get("{yourURL}").then(function() {
-    driver.findElement(webdriver.By.linkText("click me!")).click().then(function() {
+    driver.findElement(webdriver.By.linkText("Click me!")).click().then(function() {
         driver.getTitle().then(function(title) {
             setTimeout(function() {if(title === 'Second Page') {
                     console.log('Passed');
@@ -120,7 +120,7 @@ driver.get("{yourURL}").then(function() {
             </ul>
         </p>
         <p>
-            Click <a href="index.js" target="_blank" rel="noopener noreferrer">here</a> to view the entire index.js file as it should look now!
+            Click <a href="index.js" target="_blank" rel="noopener noreferrer">here</a> to view the entire index.js file as it should look now! Don't forget to add the call to the testButtonFunction in the bottom of the index.js file.
         </p>
         <p>
             Now to run this file, simply execute this command: 
